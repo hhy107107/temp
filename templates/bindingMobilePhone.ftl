@@ -48,7 +48,7 @@
                 if (reg.test(val)){
                     this.$refs.subTip.innerHTML = "请输入本人手机号绑定微信账号"
                     this.$refs.subTip.style.color = "#999999"
-                    checkPhoneNumber = true
+                    this.checkPhoneNumber = true
                     this.$refs.getCaptcha.removeAttribute("disabled")
                     this.$refs.getCaptcha.style.color="#A05A28"
                 }else{
@@ -59,7 +59,7 @@
                         this.$refs.subTip.innerHTML = "手机号码不正确，请重新输入"
                         this.$refs.subTip.style.color = "#A05A28"
                     }
-                    checkPhoneNumber = false
+                    this.checkPhoneNumber = false
                     this.$refs.captchaSubTip.innerHTML = ""
                     this.$refs.getCaptcha.setAttribute("disabled","")
                     this.$refs.confirm.setAttribute("disabled","")
@@ -97,7 +97,7 @@
                         console.log(res.data.message);
                         _this.authenticCode = res.data.result;
                         _this.countdown=60;
-                        _this.settime()
+                        _this.settime();
                     }
                 }).catch(function(err){
                     alert('获取验证码失败: '+err.message+" 请重试！");
@@ -119,7 +119,7 @@
             },
             settime(){
                 if (this.countdown == 0) {
-                    if (checkPhoneNumber){
+                    if (this.checkPhoneNumber){
                         this.$refs.getCaptcha.removeAttribute("disabled")
                     }
                     this.$refs.getCaptcha.innerHTML="获取验证码"
@@ -140,7 +140,7 @@
 
 <style>
     body{
-        background-color: #f4f4f4;;
+        background-color: #f4f4f4;
         padding:1rem;
     }
     h2{
