@@ -132,7 +132,7 @@
 			 	  	  <button @click="pay(1)">微信支付</button>
 			 	  	  <button @click="pay(2)">
 			 	  	  	余额支付
-			 	  	  	  <span>余额￥<i>XXXXXXXXXXXXX此处由java直接传值XXXXXXXXXXX<i></span>
+			 	  	  	  <span>余额￥<i>${balance}<i></span>
 			 	  	  </button>
 			 	  </div>
 			 </div>
