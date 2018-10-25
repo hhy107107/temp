@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>咖啡机移动端</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/adapter.css">
+    <link rel="stylesheet" href="./css/weui.css">
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/weui.js"></script>
+    <script type="text/javascript" src="./js/vue-cookies.js"></script>
+    <script type="text/javascript" src="./js/axios.js"></script>
+    <script type="text/javascript" src="./js/server.js"></script>
+</head>
+<body>
+	<div id="app">
+		<span>{{msg}}<span>
+	</div>
+</body>
+</html>
+
+<script>
+	var app = new Vue({
+        el: '#app',
+        data(){
+            return{
+            	msg:"helloworld!",
+            }
+        }
+    })
+</script>

@@ -1,0 +1,67 @@
+@media only screen and (width: 320px) {
+  html {
+    font-size: 12.8px;
+  }
+}
+@media only screen and (width: 360px) {
+  html {
+    font-size: 14.4px;
+  }
+}
+@media only screen and (width: 375px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media only screen and (width: 400px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media only screen and (width: 414px) {
+  html {
+    font-size: 16.56px;
+  }
+}
+@media only screen and (width: 640px) {
+  html {
+    font-size: 25.6px;
+  }
+}
+@media only screen and (min-width: 640px) {
+  html {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width:1024px){
+  body{
+    max-width: 640px;
+  }
+}
+@media screen and (max-width:1024px) and (min-width:768px){
+  body{
+    max-width: 1024px;
+    font-size:18px;
+  }
+}
+@media screen and (max-width:768px) and (min-width:640px){
+  body{
+    max-width: 768px;
+  }
+}
+body,div,p,dd,ul,li,ol,dl,h1,h2,h3,h4,h5,h6,span,a,i,img,input,button,section{
+  margin: 0;
+  padding: 0;
+}
+
+ul,li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
