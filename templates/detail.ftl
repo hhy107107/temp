@@ -188,7 +188,7 @@
                 }).then(function(res){            
                     if (res.data.code==1){
                         if (payType==1){
-                            _this.awakeWechatPay(res.data.result,res.data.result.orderSn);
+                            _this.awakeWechatPay(res.data.result);
                         }else if (payType==2){
                             window.location.href = "${apiPath}/view/indent?orderSn="+res.data.result;
                         }
@@ -216,7 +216,7 @@
 
     })
 
-function onBridgeReady(result,orderSn){
+function onBridgeReady(result){
     WeixinJSBridge.invoke(
         'getBrandWCPayRequest', {
             "appId":result.appId,     //公众号名称，由商户传入     
@@ -229,7 +229,7 @@ function onBridgeReady(result,orderSn){
         function(res){
             if(res.err_msg == "get_brand_wcpay_request:ok" ){
                 console.log("支付成功");
-                window.location.href = "${apiPath}/view/indent?orderSn="+orderSn;
+                window.location.href = "${apiPath}/view/indent?orderSn="+result.orderSn;
             } else{
                 alert("微信:支付失败"+res.err_msg);
             }
