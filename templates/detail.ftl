@@ -163,7 +163,7 @@
          		var _this = this;
          		await axios.get('${apiPath}/goods/detail',{
                     params:{
-                      goodsId:getQueryString("goodsId"),
+                      goodsId:${goodsId},
                     }
                 }).then(function(res){            
                     if (res.data.code==1){
@@ -192,7 +192,10 @@
                         }else if (payType==2){
                             window.location.href = "${apiPath}/view/indent?orderSn="+res.data.result;
                         }
-                    }else{
+                    } else if(res.data.code = -3) {
+                        // 跳转到绑定手机页面
+                        window.location.href = "${apiPath}/view/bindingMobilePhone";
+                    } else{
                         alert('后台:支付失败: '+res.data.message)
                     }
                 }).catch(function(err){

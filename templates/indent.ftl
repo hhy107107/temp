@@ -154,7 +154,7 @@
          		var _this = this;
          		axios.get('${apiPath}/order/detail',{
                     params:{
-                      orderSn:${orderSn},
+                      orderSn:${orderSn}
                     }
                 }).then(function(res){            
                     if (res.data.code==1){
