@@ -112,7 +112,7 @@
                         code:_this.captchaNumber,
                     }
                 }).then(function(res){  
-
+                    window.location.href = ${redirectUrl};
                 }).catch(function(err){
                     alert('验证失败: '+err.message+" 请重试！");
                 })

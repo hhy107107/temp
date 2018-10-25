@@ -14,7 +14,6 @@
     <script type="text/javascript" src="${staticPath}/js/vue-cookies.js"></script>
     <script type="text/javascript" src="${staticPath}/js/axios.js"></script>
     <script type="text/javascript" src="${staticPath}/js/server.js"></script>
-    <script type="text/javascript" src="${staticPath}/js/common.js"></script>
     <script type="text/javascript" src="${staticPath}/js/jweixin.js"></script>
     <style type="text/css">
     	  .detail-constent{
@@ -163,7 +162,7 @@
          		var _this = this;
          		await axios.get('${apiPath}/goods/detail',{
                     params:{
-                      goodsId:${goodsId},
+                      goodsId:getQueryString("goodsId"),
                     }
                 }).then(function(res){            
                     if (res.data.code==1){
@@ -192,10 +191,7 @@
                         }else if (payType==2){
                             window.location.href = "${apiPath}/view/indent?orderSn="+res.data.result;
                         }
-                    } else if(res.data.code = -3) {
-                        // 跳转到绑定手机页面
-                        window.location.href = "${apiPath}/view/bindingMobilePhone";
-                    } else{
+                    }else{
                         alert('后台:支付失败: '+res.data.message)
                     }
                 }).catch(function(err){
