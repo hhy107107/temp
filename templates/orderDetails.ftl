@@ -13,6 +13,7 @@
     <script type="text/javascript" src="${staticPath}/js/vue-cookies.js"></script>
     <script type="text/javascript" src="${staticPath}/js/axios.js"></script>
     <script type="text/javascript" src="${staticPath}/js/server.js"></script>
+    <script type="text/javascript" src="${staticPath}/js/date.js"></script>
     <style>
     	body{
     		background-color:rgb(244,244,244);
@@ -62,6 +63,8 @@
     	 	font-size: 0.9rem;
     	 	color:rgb(51,51,51);
     	 	margin:0.5rem 1rem;
+        max-width: 80%;
+        text-overflow : ellipsis;
     	 }
 
          .constent-title span{
@@ -99,10 +102,10 @@
           }
          
            .constent-goods-price{
-           	  font-size:1rem;
+           	  font-size:1.2rem;
            }
            .constent-goods-price i{
-           	  font-size:0.5rem ;
+           	  font-size:0.9rem ;
            }
            .constent-time{
     	 	display: inline-block;
@@ -112,7 +115,7 @@
          	display:inline-block;
          	float:right;
          	margin-right:1rem;
-         	font-size:0.6rem;
+         	font-size:1.2rem;
     	 	color:#C8C8CD;
     	 	line-height: 1.8rem;
           }
@@ -163,7 +166,7 @@
 							<div class="constent-title">
 								<p>订单编号：{{item.orderSn}}</p>
 								<span>
-								    {{item.orderStatus}}
+								    待取货
 								</span>
 							</div>
 							
@@ -182,7 +185,7 @@
 										</div>
 										<div class="constent-time fr">
 											<span>
-												{{item.payTime}}
+												{{format(item.payTime)}}
 											</span>
 										</div>
 					                   </div>
@@ -202,7 +205,7 @@
 							<div class="constent-title">
 								<p>订单编号：{{item.orderSn}}</p>
 								<span>
-								    {{item.orderStatus}}
+								    订单已完成
 								</span>
 							</div>
 							
@@ -214,11 +217,11 @@
 								<div class="constent-goods-details fr">
 									<h4>{{item.goodsName }}</h4>
 									<div class="constent-goods-price fl">
-										<span><i>￥</i>{{item.oederPrice}}</span>
+										<span><i>￥</i>{{item.orderPrice}}</span>
 									</div>
 									<div class="constent-time fr">
 										<span>
-												   	{{item.orderTime}}
+												   	{{format(item.orderTime)}}
 										</span>
 									</div>
 				
@@ -256,6 +259,9 @@
 	         	this.pullgoodsDetail();
 		         },
            methods:{
+            format(time) {
+                return new Date(time).Format('yyyy年MM月dd日 hh:mm:ss');
+            }, 
          	pullgoodsDetail(){
          		var _this = this;
          		axios.get('${apiPath}/order/list',{
