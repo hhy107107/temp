@@ -63,7 +63,7 @@
     	 	font-size: 0.9rem;
     	 	color:rgb(51,51,51);
     	 	margin:0.5rem 1rem;
-        max-width: 80%;
+        width: 60%;
         text-overflow : ellipsis;
     	 }
 
@@ -115,9 +115,9 @@
          	display:inline-block;
          	float:right;
          	margin-right:1rem;
-         	font-size:1.2rem;
+         	font-size:0.8rem;
     	 	color:#C8C8CD;
-    	 	line-height: 1.8rem;
+    	 	line-height: 1.2rem;
           }
            .constent-dashed{
          	  width:100%;
@@ -260,7 +260,7 @@
 		         },
            methods:{
             format(time) {
-                return new Date(time).Format('yyyy年MM月dd日 hh:mm:ss');
+                return new Date(time).Format('yyyy-MM-dd hh:mm:ss');
             }, 
          	pullgoodsDetail(){
          		var _this = this;
