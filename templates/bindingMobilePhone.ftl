@@ -94,6 +94,7 @@
                     }
                 }).then(function(res){            
                     if (res.data.code==1){
+                        alert(res.data.result);
                         console.log(res.data.message);
                         _this.authenticCode = res.data.result;
                         _this.countdown=60;
@@ -112,7 +113,7 @@
                         code:_this.captchaNumber,
                     }
                 }).then(function(res){  
-                    window.location.href = ${redirectUrl};
+                    window.location.href = '${redirectUrl}';
                 }).catch(function(err){
                     alert('验证失败: '+err.message+" 请重试！");
                 })
