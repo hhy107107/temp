@@ -104,7 +104,7 @@
                 }).then(function(res){            
                     if (res.data.code==1){
                         _this.user.name=res.data.result.nickname;
-                        _this.user.profile = res.data.result.avater;
+                        _this.user.profile = res.data.result.avatar;
                         _this.user.balance = res.data.result.balance;
                     }else{
                         alert ('获取用户信息失败: '+res.data.message);
@@ -118,7 +118,7 @@
                 axios.get('${apiPath}/member/getUserBalanceRecord',{
                     params:{
                         pageNo:1,
-                        pageSize:1000,
+                        pageSize:10000,
                     }
                 }).then(function(res){            
                     if (res.data.code==1){
