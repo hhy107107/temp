@@ -56,16 +56,16 @@
     	    }
     	    .constent-price-sale i:nth-child(2){
     	    	width:1rem;
-    	    	height:0.5rem ;
+    	    	height:1rem ;
     	    	margin-left:1rem;
     	    	background-color:#ccc;
     	    	border-radius:0.25rem;
     	    	color:#333;
     	    	line-height:1rem;
-    	    	font-size: 0.2rem;	
+    	    	font-size: 0.8rem;	
     	    }
     	    .constent-price i{
-    	    	font-size:0.5rem;
+    	    	font-size:0.9rem;
     	    }
             .constent-underline{
             	width:100%;
@@ -80,9 +80,12 @@
             }
             .constent-slices{
             	margin-top:2rem;
-            	width:6rem;
+            	width:100%;
             	position:relative;
             	text-align: center;
+            }
+            .constent-slices img{
+                width:6rem;
             }
             .constent-slices p{
             	width: 100%;
@@ -112,7 +115,7 @@
 			 	  	   <h3  align="left">{{list.detailList[0].goodsName}}</h3>
 			 	  	   <p align="left">{{list.detailList[0].goodsAbbreviation}}</p>
 			 	  
-			 	    <div class="constent-price">
+			 	    <div class="">
 			                <div class="constent-price-sale">
 			                    <span><i>￥</i>{{list.detailList[0].goodsPrice}}</span><i>已购</i>
 			                   
