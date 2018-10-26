@@ -140,7 +140,7 @@
         background-color: #f4f4f4;
     }
     .card{
-        background-image: url(''${staticPath}/images/member/卡片背景@3x.png');
+        background-image: url('${staticPath}/images/member/卡片背景@3x.png');
         background-size: contain;
         background-repeat: no-repeat;
         margin:0.8rem;
