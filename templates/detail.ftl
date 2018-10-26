@@ -20,6 +20,7 @@
     	  .detail-constent{
     	  	  width:100%;
 /*    	  	  background:#ECECEC;*/
+                margin-bottom: 5rem;
     	   }
     	   .detail-constent-img{
     	   	  width:100%;

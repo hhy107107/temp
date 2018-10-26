@@ -65,6 +65,8 @@
     	 	margin:0.5rem 1rem;
         width: 60%;
         text-overflow : ellipsis;
+        white-space:nowrap;
+        overflow:hidden;
     	 }
 
          .constent-title span{
@@ -85,6 +87,7 @@
           .constent-goods-img img{
           	width: 100%;
           	height: 100%;
+            max-height:5.5rem;
           	border-radius:0.3rem;
           }
           .fl{
@@ -117,7 +120,7 @@
          	margin-right:1rem;
          	font-size:0.8rem;
     	 	color:#C8C8CD;
-    	 	line-height: 1.2rem;
+    	 	line-height: 1.8rem;
           }
            .constent-dashed{
          	  width:100%;

@@ -80,7 +80,7 @@
             }
             .constent-slices{
             	margin-top:2rem;
-            	width:100%;
+            	width:6rem;
             	position:relative;
             	text-align: center;
             }
@@ -125,10 +125,13 @@
 			 	     <div class="constent-indent">
 			 	     	 <p>订单编号：{{list.orderSn}}</p>
 			 	     	 <p>订单时间：{{list.orderTime}}</p>
-			 	     	<p>支付方式：{{list.payType}}</p>
+			 	     	<p>支付方式：
+                            <span v-if="list.payType==1">微信支付</span>
+                            <span v-else>余额支付</span>
+                        </p>
 			 	     </div>
 			 	     <div class="constent-slices">
-			 	     	<img src="${staticPath}/images/slices.png"/>
+			 	     	<img src="${staticPath}/images/取货码@3x.png"/>
 			 	     	<p>{{list.pickupCode}}</p>
 			 	     </div>
 			 	  </div>
