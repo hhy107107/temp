@@ -14,6 +14,7 @@
     <script type="text/javascript" src="${staticPath}/js/vue-cookies.js"></script>
     <script type="text/javascript" src="${staticPath}/js/axios.js"></script>
     <script type="text/javascript" src="${staticPath}/js/server.js"></script>
+    <script type="text/javascript" src="${staticPath}/js/common.js"></script>
     <script type="text/javascript" src="${staticPath}/js/jweixin.js"></script>
     <style type="text/css">
     	  .detail-constent{
@@ -37,26 +38,26 @@
     	   .constent-title-left{
     	   	     width:90%;
     	   	     margin:0 auto;
-    	   	     text-align: center; 
+    	   	     text-align: center;
     	   }
     	   .constent-title-left h3{
     	   	    line-height:1.8rem;
     	   	    color:rgb(160,90,40);
-    	   	     word-wrap: break-word;  
+    	   	     word-wrap: break-word;
     	   }
     	    .constent-title-left p{
     	    	color: #CCCCCC;
     	    	font-size:1rem ;
-    	    	word-wrap: break-word; 
+    	    	word-wrap: break-word;
     	    }
     	   .constent-price span{
     	   	    text-align: center;
     	   	    color: rgb(160,90,40);
-    	   } 
+    	   }
             .constent-price-sale{
             	margin:0.5rem auto;
             	text-align:left;
-            	font-size:1.5rem;	
+            	font-size:1.5rem;
     	    }
     	    .constent-price i{
     	    	font-size:0.5rem;
@@ -108,16 +109,16 @@
 			 <div class="detail-constent-img">
 			 	 <img  v-lazy="goods.goodsImg"/>
 			 </div>
-			   
+
 			 <div class="detail-constent-title">
 			 	  <div class="constent-title-left">
 			 	  	   <h3  align="left">{{goods.goodsName}}</h3>
 			 	  	   <p align="left">{{goods.goodsDesc}}</p>
-			 	  
+
 			 	    <div class="constent-price">
 			                <div class="constent-price-sale">
 			                    <span><i>￥</i>{{goods.goodsPrice}}</span>
-			                   
+
 			                    <div class="constent-price-logo fr">
 			                    	<img src="${staticPath}/images/index/热卖icon@3x.png"  v-show="goods.hot"/>
 			                    </div>
@@ -162,9 +163,9 @@
          		var _this = this;
          		await axios.get('${apiPath}/goods/detail',{
                     params:{
-                      goodsId:getQueryString("goodsId"),
+                      goodsId:${goodsId},
                     }
-                }).then(function(res){            
+                }).then(function(res){
                     if (res.data.code==1){
                         _this.goods=res.data.result
                       console.log(_this.goods);
@@ -184,14 +185,14 @@
                         goodsNum:1
                       }
                     }
-                }).then(function(res){            
+                }).then(function(res){
                     if (res.data.code==1){
                         if (payType==1){
                             _this.awakeWechatPay(res.data.result);
                         }else if (payType==2){
                             window.location.href = "${apiPath}/view/indent?orderSn="+res.data.result;
                         }
-                    }else{
+                    } else{
                         alert('后台:支付失败: '+res.data.message)
                     }
                 }).catch(function(err){
@@ -199,6 +200,7 @@
                 })
             },
             awakeWechatPay(result){
+
                 if (typeof WeixinJSBridge == "undefined"){
                     if( document.addEventListener ){
                         document.addEventListener('WeixinJSBridgeReady', onBridgeReady,   false);
@@ -230,6 +232,7 @@ function onBridgeReady(result){
                 console.log("支付成功");
                 window.location.href = "${apiPath}/view/indent?orderSn="+result.orderSn;
             } else{
+                alert(JSON.stringify(res));
                 alert("微信:支付失败"+res.err_msg);
             }
         }
