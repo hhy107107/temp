@@ -69,9 +69,9 @@
             },
             captchaNumber:function(val){
                 if (val.length!=6){
-                        this.$refs.captchaSubTip.innerHTML = "验证码长度不正确"
-                        this.$refs.confirm.style.opacity="0.5"
-                        this.$refs.confirm.setAttribute("disabled","")
+                    this.$refs.captchaSubTip.innerHTML = "验证码长度不正确"
+                    this.$refs.confirm.style.opacity="0.5"
+                    this.$refs.confirm.setAttribute("disabled","")
                 }else{
                     if (this.captchaNumber==this.authenticCode){
                         this.$refs.captchaSubTip.innerHTML = ""
@@ -127,7 +127,7 @@
                 } else {
                     this.$refs.getCaptcha.setAttribute("disabled", "")
                     this.$refs.getCaptcha.innerHTML=this.countdown+"s后重新获取"
-                    this.countdown--
+                    this.countdown --
                     var _this= this
                     setTimeout(function() {
                         _this.settime()

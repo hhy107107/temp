@@ -105,19 +105,19 @@
 	<div id="app">
 		<div class="detail-constent">
 			 <div class="detail-constent-img">
-			 	 <img :src="list.goodsImage"/>
+			 	 <img :src="list.detailList[0].goodsImage"/>
 			 </div>
 			 <div class="detail-constent-title">
 			 	  <div class="constent-title-left">
-			 	  	   <h3  align="left">{{list.goodsName}}</h3>
-			 	  	   <p align="left">{{list.goodsAbbreviation}}</p>
+			 	  	   <h3  align="left">{{list.detailList[0].goodsName}}</h3>
+			 	  	   <p align="left">{{list.detailList[0].goodsAbbreviation}}</p>
 			 	  
 			 	    <div class="constent-price">
 			                <div class="constent-price-sale">
-			                    <span><i>￥</i>{{list.goodsPrice}}</span><i>已购</i>
+			                    <span><i>￥</i>{{list.detailList[0].goodsPrice}}</span><i>已购</i>
 			                   
 			                    <div class="constent-price-logo fr">
-			                    	<img src="${staticPath}/images/index/热卖icon@3x.png" v-show="list.isHot"/>
+			                    	<img src="${staticPath}/images/index/热卖icon@3x.png" v-show="list.detailList[0].isHot"/>
 			                    </div>
 			                </div>
 			 	     </div>

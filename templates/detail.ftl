@@ -232,7 +232,7 @@ function onBridgeReady(result){
                 console.log("支付成功");
                 window.location.href = "${apiPath}/view/indent?orderSn="+result.orderSn;
             } else{
-                alert(JSON.stringify(res));
+                //alert(JSON.stringify(res));
                 alert("微信:支付失败"+res.err_msg);
             }
         }
