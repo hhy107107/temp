@@ -64,6 +64,10 @@
                 </a>
             </div>
         </div>
+        <div class="empty-box" v-show="items.length==0">
+            <img src="${staticPath}/images/member/占位图@3x.png">
+            <p>亲，暂无商品哦～</p>
+        </div>
         <div class="tip-box">
             <span>———————— 小小幸福 在你身边 ————————</span>
         </div>
@@ -87,7 +91,7 @@
             return{
             	msg:"helloworld!",
                 recommendedLogo:'${staticPath}/images/index/热卖icon@3x.png',
-                flagScrollTop:true,
+                flagScrollTop:false,
                 swiperOption: {
                     slidesPerView: 1,
                     pagination: {
@@ -104,14 +108,7 @@
             }
         },
         created(){
-            this.checkScrollTop() 
-            //var result = this.authorize();
-            // var user = this.$cookies.get("user")
-            // if (user){
-            //     this.checkScrollTop()    
-            // }else{
-            //     window.location.href="bindingMobilePhone.ftl"
-            // }  
+            this.checkScrollTop()  
         },
         async mounted(){
             this.pullBanners();
@@ -309,5 +306,19 @@
         right:1.2rem;
         max-height: 2.5rem;
         z-index:999;
+    }
+
+    .empty-box{
+        height:30rem;
+        text-align:center;
+    }
+    .empty-box img{
+        width:10rem;
+        margin-top:5rem;
+    }
+    .empty-box p{
+        color:#666666;
+        font-size:1rem;
+        margin-top:3rem;
     }
 </style>

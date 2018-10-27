@@ -167,7 +167,7 @@
          },
          methods:{
             format(time) {
-                return new Date(time).Format('yyyy年MM月dd hh:mm:ss');
+                return new Date(time).Format('yyyy年MM月dd日 hh:mm:ss');
             },
          	pullgoodsDetail(){
          		var _this = this;

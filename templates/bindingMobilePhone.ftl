@@ -94,11 +94,13 @@
                     }
                 }).then(function(res){            
                     if (res.data.code==1){
-                        alert(res.data.result);
+                        //alert(res.data.result);
                         console.log(res.data.message);
                         _this.authenticCode = res.data.result;
                         _this.countdown=60;
                         _this.settime();
+                    }else{
+                        alert('获取验证码失败: '+res.data.message);
                     }
                 }).catch(function(err){
                     alert('获取验证码失败: '+err.message+" 请重试！");
