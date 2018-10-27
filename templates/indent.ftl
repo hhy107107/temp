@@ -14,6 +14,8 @@
     <script type="text/javascript" src="${staticPath}/js/axios.js"></script>
     <script type="text/javascript" src="${staticPath}/js/server.js"></script>
     <script type="text/javascript" src="${staticPath}/js/common.js"></script>
+    <script type="text/javascript" src="${staticPath}/js/vue-lazyload.js"></script>
+    <script type="text/javascript" src="${staticPath}/js/date.js"></script>
     <style type="text/css">
     	  .detail-constent{
     	  	  width:100%;
@@ -58,11 +60,12 @@
     	    	width:1rem;
     	    	height:1rem ;
     	    	margin-left:1rem;
+                padding:0.2rem 0.4rem;
     	    	background-color:#ccc;
     	    	border-radius:0.25rem;
     	    	color:#333;
     	    	line-height:1rem;
-    	    	font-size: 0.8rem;	
+    	    	font-size: 1rem;	
     	    }
     	    .constent-price i{
     	    	font-size:0.9rem;
@@ -108,7 +111,7 @@
 	<div id="app">
 		<div class="detail-constent">
 			 <div class="detail-constent-img">
-			 	 <img :src="list.detailList[0].goodsImage"/>
+			 	 <img v-lazy="list.detailList[0].goodsImage"/>
 			 </div>
 			 <div class="detail-constent-title">
 			 	  <div class="constent-title-left">
@@ -127,7 +130,7 @@
 			 	     <div class="constent-underline"></div>
 			 	     <div class="constent-indent">
 			 	     	 <p>订单编号：{{list.orderSn}}</p>
-			 	     	 <p>订单时间：{{list.orderTime}}</p>
+			 	     	 <p>订单时间：{{format(list.orderTime)}}</p>
 			 	     	<p>支付方式：
                             <span v-if="list.payType==1">微信支付</span>
                             <span v-else>余额支付</span>
@@ -145,6 +148,13 @@
 </html>
 
 <script>
+    Vue.use(VueLazyload, {
+      preLoad: 1.3,
+      error: '${staticPath}/images/index/商品详情主图占位图@3x.png',
+      loading: '${staticPath}/images/index/商品详情主图占位图@3x.png',
+      attempt: 3
+    })
+
 	var app = new Vue({
         el: '#app',
         data(){
@@ -156,6 +166,9 @@
          	this.pullgoodsDetail();
          },
          methods:{
+            format(time) {
+                return new Date(time).Format('yyyy年MM月dd hh:mm:ss');
+            },
          	pullgoodsDetail(){
          		var _this = this;
          		axios.get('${apiPath}/order/detail',{

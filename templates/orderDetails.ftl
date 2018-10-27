@@ -131,7 +131,7 @@
          	text-align: center;
          	color: rgb(160,90,40);
          	margin:0.5rem auto;
-          padding-bottom: 1rem;
+          padding-bottom: 0.7rem;
          }
          
           .default{

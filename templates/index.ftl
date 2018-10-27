@@ -170,7 +170,7 @@
                 var _this = this
                 window.onscroll = function () {
                     let osTop = document.documentElement.scrollTop || document.body.scrollTop
-                    if (osTop >= 100) {
+                    if (osTop >= 300) {
                         _this.flagScrollTop = true
                     } else {
                         _this.flagScrollTop = false
@@ -246,10 +246,11 @@
     }
     .middle-box p:first-child{
         font-weight:900;
+        font-size:1.3rem;
     }
     .middle-box p:last-child{
         color:#999999;
-        font-size:0.3rem;
+        font-size:1rem;
     }
     .float-left, .float-right{
         width:49%;
