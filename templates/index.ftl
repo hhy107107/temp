@@ -33,9 +33,9 @@
         </swiper>
         <div class="swiper-pagination"  slot="pagination"></div>
         <div class="category-box">
-            <div class="category-item-box" v-for="item in categories" @click="pullItems(item.id)">
+            <div class="category-item-box" v-for="(item,index) in categories" @click="pullItems(item.id,index)">
                 <image class="category-image" v-lazy="item.categoryImg"></image>
-                <p>{{item.categoryName}}</p>
+                <p v-bind:class="{selected:index==selectedIndex}">{{item.categoryName}}</p>
             </div>
         </div>
         <div class="middle-box">
@@ -92,6 +92,7 @@
             	msg:"helloworld!",
                 recommendedLogo:'${staticPath}/images/index/热卖icon@3x.png',
                 flagScrollTop:false,
+                selectedIndex:0,
                 swiperOption: {
                     slidesPerView: 1,
                     pagination: {
@@ -141,12 +142,14 @@
                     if (res.data.code==1){
                         console.log(res.data.message);
                         _this.categories = res.data.result;
+                        _this.selectedIndex = 0;
                     }
                 }).catch(function(err){
                     alert('拉取分类列表失败: '+err.message);
                 });
             },
-            pullItems(id){
+            pullItems(id,index){
+                this.selectedIndex = index;
                 var _this = this;
                 axios.get('${apiPath}/goods/list',{
                     params:{
@@ -235,6 +238,10 @@
         width:5rem;
         height:5rem;
         border-radius:50%;
+    }
+    .selected{
+        font-weight: 800;
+        color:rgb(160,90,40);
     }
     .middle-box{
         height:3rem;
