@@ -33,11 +33,13 @@
     	   .detail-constent-title{
     	   	  width:100%;
     	   	  background-color: #fff;
+              padding-bottom: 5rem;
     	   }
     	   .constent-title-left{
     	   	     width:90%;
     	   	     margin:0 auto;
     	   	     text-align: center;
+                 padding-top:1rem;
     	   }
     	   .constent-title-left h3{
     	   	    line-height:1.8rem;
