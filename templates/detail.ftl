@@ -35,6 +35,7 @@
     	   .detail-constent-title{
     	   	  width:100%;
     	   	  background-color: #fff;
+              padding-bottom: 5rem;
     	   }
     	   .constent-title-left{
     	   	     width:90%;
