@@ -114,7 +114,7 @@
         async mounted(){
             this.pullBanners();
             await this.pullCategories();
-            this.pullItems(this.categories[0].id);
+            this.pullItems(this.categories[0].id,0);
         },
         components: {
             LocalSwiper: VueAwesomeSwiper.swiper,
