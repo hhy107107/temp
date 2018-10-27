@@ -87,7 +87,7 @@
           .constent-goods-img img{
           	width: 100%;
           	height: 100%;
-            max-height:5.5rem;
+            max-height:4rem;
           	border-radius:0.3rem;
           }
           .fl{
@@ -131,6 +131,7 @@
          	text-align: center;
          	color: rgb(160,90,40);
          	margin:0.5rem auto;
+          padding-bottom: 1rem;
          }
          
           .default{

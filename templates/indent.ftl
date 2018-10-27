@@ -85,7 +85,7 @@
             	text-align: center;
             }
             .constent-slices img{
-                width:6rem;
+                width:10rem;
             }
             .constent-slices p{
             	width: 100%;
