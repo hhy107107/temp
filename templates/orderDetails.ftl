@@ -205,6 +205,7 @@
 			        
 			        <ul v-show='!flag'>
 						<li v-for="(item,key) in list2">
+              <a :href="jumpItem(item.orderSn)">
 							<div class="constent-title">
 								<p>订单编号：{{item.orderSn}}</p>
 								<span>
@@ -230,6 +231,7 @@
 				
 								</div>
 							</div>
+              </a>
 						</li>
 				    </ul>
 				    
@@ -269,7 +271,7 @@
          		var _this = this;
          		axios.get('${apiPath}/order/list',{
                     params:{
-                      type:1,
+                      type:2,
                       pageNo:1,
                       pageSize:100
                       
@@ -285,7 +287,7 @@
                 })
                 axios.get('${apiPath}/order/list',{
                     params:{
-                      type:2,
+                      type:1,
                       pageNo:1,
                       pageSize:100
                     }
