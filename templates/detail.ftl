@@ -45,6 +45,7 @@
     	   	    line-height:1.8rem;
     	   	    color:rgb(160,90,40);
     	   	     word-wrap: break-word;
+                 padding-top:1rem; 
     	   }
     	    .constent-title-left p{
     	    	color: #CCCCCC;
