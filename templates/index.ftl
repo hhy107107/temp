@@ -34,13 +34,14 @@
         <div class="swiper-pagination"  slot="pagination"></div>
         <div class="category-box">
             <div class="category-item-box" v-for="(item,index) in categories" @click="pullItems(item.id,index)">
+                <img v-if="index==selectedIndex" class="selected-background" src="${staticPath}/images/index/选中底@3x.png"></img>
                 <image class="category-image" v-lazy="item.categoryImg"></image>
                 <p v-bind:class="{selected:index==selectedIndex}">{{item.categoryName}}</p>
             </div>
         </div>
         <div class="middle-box">
             <p>咖啡GO</p>
-            <p>海量甄选咖啡，随心购</p>
+            <p>{{categories[selectedIndex].categoryName}}，随心购</p>
         </div>
         <div class="float-left">
             <div class="item-box" v-for="(item, index) in items" v-if="!(index%2)">
@@ -234,13 +235,20 @@
         display: inline-block;
         text-align: center;
     }
+    .selected-background{
+        width:4.5rem;
+        z-index: -1;
+        position:absolute;
+    }
     .category-image{
-        width:5rem;
-        height:5rem;
+        width:4rem;
+        height:4rem;
         border-radius:50%;
+        padding-top: 1.2rem;
+        padding-left: 0.3rem;
     }
     .selected{
-        font-weight: 800;
+        /*font-weight: 800;*/
         color:rgb(160,90,40);
     }
     .middle-box{
