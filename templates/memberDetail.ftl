@@ -44,10 +44,14 @@
                 <p>{{item.rechargeAmount}}</p>
             </div>
         </div>
+        <div class="reminder"></div>
         <div class="empty-box" v-show="items.length==0">
             <img src="${staticPath}/images/member/占位图@3x.png">
             <p>亲，暂无余额明细哦～</p>
         </div>
+        <div class="bottom-navi">
+            <a href="${apiPath}/view/index.html">咖啡</a><a href="${apiPath}/view/orderDetails.html">订单</a><a href="${apiPath}/view/memberDetail.html">个人账户</a>
+        </div> 
 	</div>
 </body>
 </html>
@@ -167,15 +171,15 @@
     }
     .info span:nth-child(1), .info span:nth-child(3){
         color:white;
-        font-size:1.3rem;
+        font-size:1.2rem;
         font-weight:800;
     }
     .info span:nth-child(3) span{
-        font-size:2.5rem;
+        font-size:1.8rem;
     }
     .info span:nth-child(5){
         color:white;
-        font-size:1rem;
+        font-size:0.9rem;
         font-weight:500;
     }
     .middle-box{
@@ -227,5 +231,26 @@
         color:#666666;
         font-size:1rem;
         margin-top:3rem;
+    }
+    .reminder{
+        width:100%;
+        height:3rem;
+        display: inline-block;
+    }
+    .bottom-navi{
+        height:3rem;
+        position:fixed;
+        width:100%;
+        bottom: 0rem;
+        background-color: rgb(250,250,250);
+    }
+    .bottom-navi a{
+        width:32.8%;
+        border:1px solid rgb(231,231,231);
+        color:rgb(93,93,93);
+        line-height: 3rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
     }
 </style>

@@ -107,6 +107,23 @@
              	width:100%;
              	height:100%;
              }
+
+            .bottom-navi{
+                height:3rem;
+                position:fixed;
+                width:100%;
+                bottom: 0rem;
+                background-color: rgb(250,250,250);
+            }
+            .bottom-navi a{
+                width:32.8%;
+                border:1px solid rgb(231,231,231);
+                color:rgb(93,93,93);
+                line-height: 3rem;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
     </style>
 </head>
 <body>
@@ -144,6 +161,9 @@
 			 	     </div>
 			 	  </div>
 			 </div>
+            <div class="bottom-navi">
+                <a href="${apiPath}/view/index.html">咖啡</a><a href="${apiPath}/view/orderDetails.html">订单</a><a href="${apiPath}/view/memberDetail.html">个人账户</a>
+            </div> 
 		</div>
 	</div>
 </body>

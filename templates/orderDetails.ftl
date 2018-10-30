@@ -52,6 +52,7 @@
     	 .order-constent{
     	 	width:90%;
     	 	margin:0 auto;
+        margin-bottom: 3rem;
     	 }
     	 .order-constent li{
     	 	background-color: #FFFFFF;
@@ -146,6 +147,22 @@
     	 .constent-item{
     	 	overflow: hidden;
     	 }
+       .bottom-navi{
+            height:3rem;
+            position:fixed;
+            width:100%;
+            bottom: 0rem;
+            background-color: rgb(250,250,250);
+        }
+        .bottom-navi a{
+            width:32.8%;
+            border:1px solid rgb(231,231,231);
+            color:rgb(93,93,93);
+            line-height: 3rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -238,10 +255,13 @@
 				    
 				</div>
 	
-	          <div  class="default" v-show="(flag&&list1.length==0)||(!flag&&list2.length==0)">
+	       <div  class="default" v-show="(flag&&list1.length==0)||(!flag&&list2.length==0)">
 		     	<img src="${staticPath}/images/default.png"/>
 		     	<p>亲，暂无相关订单哦~</p>
 		     </div>
+      <div class="bottom-navi">
+          <a href="${apiPath}/view/index.html">咖啡</a><a href="${apiPath}/view/orderDetails.html">订单</a><a href="${apiPath}/view/memberDetail.html">个人账户</a>
+      </div>  
 
 	</div>
 	

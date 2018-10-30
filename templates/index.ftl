@@ -75,6 +75,9 @@
             <span>———————— 小小幸福 在你身边 ————————</span>
         </div>
         <img id="scrollTop" src="${staticPath}/images/index/返回顶部icon@3x.png" v-show="flagScrollTop" v-on:click="backTop"></img>
+        <div class="bottom-navi">
+            <a href="${apiPath}/view/index.html">咖啡</a><a href="${apiPath}/view/orderDetails.html">订单</a><a href="${apiPath}/view/memberDetail.html">个人账户</a>
+        </div>
 	</div>
 </body>
 </html>
@@ -323,10 +326,11 @@
         height:3rem;
         color:#999999;
         font-size:0.8rem;
+        margin-bottom: 3rem;
     }
     #scrollTop{
         position:fixed;
-        bottom:2rem;
+        bottom:4rem;
         right:1.2rem;
         max-height: 2.5rem;
         z-index:999;
@@ -344,5 +348,21 @@
         color:#666666;
         font-size:1rem;
         margin-top:3rem;
+    }
+    .bottom-navi{
+        height:3rem;
+        position:fixed;
+        width:100%;
+        bottom: 0rem;
+        background-color: rgb(250,250,250);
+    }
+    .bottom-navi a{
+        width:32.8%;
+        border:1px solid rgb(231,231,231);
+        color:rgb(93,93,93);
+        line-height: 3rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
     }
 </style>
