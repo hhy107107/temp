@@ -253,8 +253,8 @@
         width:4rem;
         height:4rem;
         border-radius:50%;
-        padding-top: 1.2rem;
-        padding-left: 0.1rem;
+        margin-top: 1.2rem;
+        margin-left: 0.1rem;
     }
     .selected{
         /*font-weight: 800;*/
