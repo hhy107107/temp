@@ -101,6 +101,10 @@
                 selectedIndex:0,
                 swiperOption: {
                     slidesPerView: 1,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false
+                    },
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true
