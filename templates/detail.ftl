@@ -120,6 +120,7 @@
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
+                font-style:normal;
             }
     </style>
 </head>
