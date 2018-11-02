@@ -361,7 +361,7 @@
         background-color: rgb(250,250,250);
     }
     .bottom-navi a{
-        width:32.8%;
+        width:32.6%;
         border:1px solid rgb(231,231,231);
         color:rgb(93,93,93);
         line-height: 3rem;
